@@ -35,11 +35,17 @@ export const ContextProvider = ({ children }) => {
   
   // Al cargar el componente, obtiene el tema del localStorage
   useEffect(() => {
-    const themeStored = localStorage.getItem('theme'); 
+    const themeStored = localStorage.getItem('theme');
     if (themeStored) {
-      dispatch({ type: "SET_THEME", payload: themeStored }); // actualiza el tema desde localStorage
+      dispatch({ type: "SET_THEME", payload: themeStored });
     }
-  }, []); 
+    // Obtener los favoritos almacenados en localStorage y establecerlos en el estado
+    const favoritesStored = localStorage.getItem('favorites');
+    if (favoritesStored) {
+      const favorites = JSON.parse(favoritesStored);
+      dispatch({ type: "SET_DATA", payload: favorites });
+    }
+  }, []);
 
   // Función para cambiar el tema del contexto global y actualizar el localStorage
   const setTheme = (theme) => {

@@ -1,29 +1,22 @@
-import React, { useEffect } from 'react';
-import { useContextGlobal } from '../Components/utils/global.context';
+import React, { useEffect, useState } from 'react';
 import Card from '../Components/Card';
+import axios from 'axios';
 
 const Home = () => {
-  const { theme, data, setData} = useContextGlobal();
+  const [dataApi, setDataApi] = useState([]);
 
-
-  //Lamado a la API
+  
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
-        if (!response.ok) {
-          throw new Error('No se pudo obtener la data');
-        }
-        const responseData = await response.json();
-        setData(responseData); // Almacena los datos en el contexto global
-      } catch (error) {
-        console.error('Error al obtener datos:', error);
-      }
-    };
-
-    fetchData();
-  }, [setData]); // setData como dependencia
-
+    try {
+      axios
+        .get("https://jsonplaceholder.typicode.com/users")
+        .then((response) => {
+          setDataApi(response.data);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  },[]);
 
 
 
@@ -31,7 +24,7 @@ const Home = () => {
     <main >
       <h1>Home</h1>
       <div className='card-grid'>
-          {data.map((user) => (
+          {dataApi.map((user) => (
           <Card user={user} key={user.id}/>
         ))}
       </div>

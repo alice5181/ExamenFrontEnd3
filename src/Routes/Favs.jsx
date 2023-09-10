@@ -2,20 +2,18 @@ import React from "react";
 import Card from "../Components/Card";
 import { useContextGlobal } from '../Components/utils/global.context';
 
-
 const Favs = () => {
-  
+  const { data } = useContextGlobal();
 
   return (
-    <>
-    <div >
+    <div>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
-        {/* este componente debe consumir los destacados del localStorage */}
-        {/* Deberan renderizar una Card por cada uno de ellos */}
+        {data.map((user) => (
+          <Card key={user.id} user={user} />
+        ))}
       </div>
-      </div>
-    </>
+    </div>
   );
 };
 
