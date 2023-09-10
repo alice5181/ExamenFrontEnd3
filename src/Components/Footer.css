@@ -1,7 +1,29 @@
-footer{
-    width: 100%; /* Ancho al 100% de la ventana */
-    border: 1px solid #ccc; 
-    padding: 10px; /* Agrega un espacio interior para que el contenido no quede pegado al borde */
-    background: rgb(233, 232, 232)
-  }
-  
+footer {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: rgb(233, 232, 232);
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.footer-content {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos dentro de .footer-content */
+}
+
+img {
+  max-width: 150px; /* Ajusta el ancho máximo de la imagen */
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px; /* Espacio entre los iconos de redes sociales */
+}
+
+.icon {
+  font-size: 24px; 
+  color: #333; /* Color de los iconos */
+  cursor: pointer; /* Cambia el cursor al pasar sobre los iconos */
+}
