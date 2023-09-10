@@ -1,0 +1,33 @@
+
+nav {
+    color: #100f0f; /* Color del texto en el navbar */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%; /* Ancho al 100% de la ventana */
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    background: rgb(233, 232, 232)
+  }
+  
+  /* Estilos para los enlaces */
+  nav a {
+    text-decoration: none;
+    color: inherit;
+    margin-right: 20px;
+    font-size: 18px;
+  }
+  
+  /* Estilos para el botón de cambio de tema */
+  .theme-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 10px; /* Ajusta el espacio alrededor del botón */
+    margin-right: 30px; /* Margen derecho para separar el botón de los enlaces */
+  }
+  

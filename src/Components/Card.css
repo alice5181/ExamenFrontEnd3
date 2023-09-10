@@ -1,0 +1,21 @@
+.card {
+  max-width: 200px;
+  margin: 10px;
+  padding: 10px;
+  font-size: small;
+}
+
+.card img {
+  /* imagen ocupe el 100% del ancho de la tarjeta */
+  width: 100%;
+  /* altura automática para mantener la proporción de la imagen */
+  height:fit-content;
+}
+
+.card button {
+  background-color: #333;
+  color: white;
+  border-radius: 2%; 
+  padding: 3%; 
+}
+

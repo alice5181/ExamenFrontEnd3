@@ -1,0 +1,7 @@
+footer{
+    width: 100%; /* Ancho al 100% de la ventana */
+    border: 1px solid #ccc; 
+    padding: 10px; /* Agrega un espacio interior para que el contenido no quede pegado al borde */
+    background: rgb(233, 232, 232)
+  }
+  
