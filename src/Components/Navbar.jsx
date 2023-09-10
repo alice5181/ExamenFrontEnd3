@@ -18,6 +18,9 @@ const Navbar = () => {
 
   return (
     <nav className={theme}>
+      <div className="icon">
+        <img src="/images/DH.ico" alt="DH Icon" />
+      </div>
       <button onClick={cambiarTema}>
       {theme === 'light' ? (
           <FontAwesomeIcon icon={faMoon} /> // Icono de la luna para el tema oscuro
@@ -28,7 +31,6 @@ const Navbar = () => {
       <Link to='/'><h4>Home</h4></Link>
       <Link to='/favs'><h4>Favoritos</h4></Link>
       <Link to='/contact'><h4>Contact</h4></Link>
-      <Link to='/dentist'><h4>Detail</h4></Link>
     </nav>
   );
 };

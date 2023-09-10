@@ -6,6 +6,7 @@ footer {
   display: flex;
   justify-content: space-around; 
   align-items: center; /* Centra verticalmente los elementos */
+  height:50px;
 }
 
 .footer-content {

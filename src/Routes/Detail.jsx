@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import './Detail.css'; 
 
 const Detail = () => {
   const { id } = useParams();
@@ -23,14 +24,30 @@ const Detail = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className="detail-container">
       {userDetail ? (
         <div>
           <h1>Detail Dentist id {id}</h1>
-          <p>Name: {userDetail.name}</p>
-          <p>Email: {userDetail.email}</p>
-          <p>Phone: {userDetail.phone}</p>
-          <p>Website: {userDetail.website}</p>
+          <table className="detail-table">
+            <tbody>
+              <tr>
+                <th>Name:</th>
+                <td>{userDetail.name}</td>
+              </tr>
+              <tr>
+                <th>Email:</th>
+                <td>{userDetail.email}</td>
+              </tr>
+              <tr>
+                <th>Phone:</th>
+                <td>{userDetail.phone}</td>
+              </tr>
+              <tr>
+                <th>Website:</th>
+                <td>{userDetail.website}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       ) : (
         <p>Cargando datos...</p>
