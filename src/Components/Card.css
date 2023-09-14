@@ -3,19 +3,34 @@
   margin: 10px;
   padding: 10px;
   font-size: small;
+  /* Añadimos estilos para resaltar tarjetas favoritas */
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.card:hover {
+  /* Cambiar el borde al pasar el cursor sobre la tarjeta */
+  border-color: #f0ad4e; /* Amarillo */
 }
 
 .card img {
-  /* imagen ocupe el 100% del ancho de la tarjeta */
   width: 100%;
-  /* altura automática para mantener la proporción de la imagen */
-  height:fit-content;
+  height: fit-content;
 }
 
 .card button {
   background-color: #333;
   color: white;
-  border-radius: 2%; 
-  padding: 3%; 
+  border-radius: 2%;
+  padding: 3%;
 }
 
+/* Agregamos estilos para el ícono del corazón */
+.yellow-heart {
+  color: yellow;
+}
+
+/* Agregamos estilos para resaltar tarjetas favoritas */
+.favorite {
+  border-color: #f0ad4e; /* Amarillo */
+}

@@ -9,7 +9,7 @@ import Detail from './Routes/Detail.jsx';
 import { useContextGlobal } from './Components/utils/global.context'; 
 
 function App() {
-  const { theme, setTheme } = useContextGlobal();
+  const { theme } = useContextGlobal();
 
   // Utiliza useEffect para observar cambios en el tema y aplicarlo
  useEffect(() => {
@@ -18,14 +18,14 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router> {/*BrowserRouter*/}
         <div className="App">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/favs" element={<Favs />} />
-            <Route path="/dentist/:id" element={<Detail />} />
+            <Route path="/dentist/:id" element={<Detail />} /> //el id lo recibe el componente detail como use params
           </Routes>
           <Footer />
         </div>

@@ -1,10 +1,8 @@
 import React from 'react';
 import Form from '../Components/Form';
-import { useContextGlobal } from '../Components/utils/global.context';
 import './Contact.css'; 
 
 const Contact = () => {
-  const { theme } = useContextGlobal();
 
   return (
     <div>

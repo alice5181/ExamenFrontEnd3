@@ -1,29 +1,35 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { useContextGlobal} from './utils/global.context';
+import { useContextGlobal } from './utils/global.context';
 
 const Card = ({ user }) => {
-  const { data, setData } = useContextGlobal();
+  const { dataFavs, setDataFavs} = useContextGlobal();
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  
+    const isAlreadyFav= dataFavs.some((favUser) => favUser.id === user.id);
+    /*setear true si encuentra q son = user.id que viene como props de la card y favUser.id 
+    que viene de la iteración con el some en cada elemento (favUser) en el array data
+    isAlreadyFav: La variable isAlreadyFav almacenará el resultado de la operación some(). 
+    Si al menos un elemento en data cumple la condición 
+    (es decir, si la función de callback devuelve true al menos una vez), entonces isAlreadyFav será true. 
+    En caso contrario, si ningún elemento cumple la condición, será false.*/
+  
 
   const addFav = () => {
-    // Verificar si el usuario ya está en favoritos
-    const isAlreadyFav = data.some((favUser) => favUser.id === user.id);
-
     if (!isAlreadyFav) {
-      // Clonar el estado actual de data y agregar el usuario a favoritos
-      const newData = [...data, user];
-      setData(newData);
-
-      // Guardar los favoritos en localStorage
-      localStorage.setItem('favorites', JSON.stringify(newData));
+      const newDataFavs = [...dataFavs, user];
+      setDataFavs(newDataFavs);
+      localStorage.setItem('favorites', JSON.stringify(newDataFavs));
+      setIsFavorite(true); // Marcamos la tarjeta como favorita al hacer clic en el botón
     }
   };
 
   return (
-    <div className="card">
+    <div className={`card ${isFavorite ? 'favorite' : ''}`}>
       <Link to={`/dentist/${user.id}`}>
         <img
           src="/images/doctor.jpg"
@@ -33,11 +39,27 @@ const Card = ({ user }) => {
         <p>{user.name}</p>
         <p>{user.username}</p>
       </Link>
-      <button onClick={addFav} className="favButton">
-        <FontAwesomeIcon icon={faHeart} />
+      <button onClick={addFav} className="favButton"> 
+      {/*afuera del link para que no vaya a detalles cuando clikeo la card*/}
+        <FontAwesomeIcon icon={faHeart} className={isAlreadyFav ? 'yellow-heart' : ''} />
       </button>
     </div>
   );
 };
 
 export default Card;
+
+
+
+//cosas a tener en cuenta para borrar el local storage
+
+/*useEffect(() => {
+    // Verificar si hay datos de favoritos en el localStorage
+    const favoritesData = localStorage.getItem("favorites");
+
+    // Si hay datos de favoritos en el localStorage, eliminarlos 
+    //(lo hice para limpiar mi local storage y hacer pruebas)
+    if (favoritesData) {
+      localStorage.removeItem("favorites");
+    }
+  }, []);*/
