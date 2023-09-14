@@ -14,7 +14,8 @@ const Form = () => {
     if (name.trim() === '' || name.trim().length < 3) {
       setErrorMessage('Por favor ingresa un nombre válido (mínimo 3 caracteres).');
       setSuccessMessage(''); // Limpiar el mensaje de éxito
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    } else if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@([a-zA-Z\-0-9]{3,8}\.)+[a-zA-Z]{2,}$/
+    .test(email)) {
       setErrorMessage('Por favor ingresa un correo electrónico válido.');
       setSuccessMessage(''); // Limpiar el mensaje de éxito
     } else {

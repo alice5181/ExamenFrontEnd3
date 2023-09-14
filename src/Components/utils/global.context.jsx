@@ -9,7 +9,7 @@ export const initialState = {
 };
 
 // Creación del contexto global
-export const ContextGlobal = createContext(undefined); //useContext
+const ContextGlobal = createContext(undefined); //useContext
 
 /* Definimos el reductor que gestionará el estado global
 ...state : Esto crea una copia del estado actual (state) para mantener la inmutabilidad del estado
