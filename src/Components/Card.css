@@ -10,7 +10,7 @@
 
 .card:hover {
   /* Cambiar el borde al pasar el cursor sobre la tarjeta */
-  border-color: #f0ad4e; /* Amarillo */
+  border-color: #f0ad4e; 
 }
 
 .card img {

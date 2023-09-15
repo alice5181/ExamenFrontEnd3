@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState} from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -51,7 +51,7 @@ export default Card;
 
 
 
-//cosas a tener en cuenta para borrar el local storage
+//codigo a tener en cuenta para borrar el local storage
 
 /*useEffect(() => {
     // Verificar si hay datos de favoritos en el localStorage

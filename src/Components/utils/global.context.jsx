@@ -9,7 +9,7 @@ export const initialState = {
 };
 
 // Creación del contexto global
-const ContextGlobal = createContext(undefined); //useContext
+const ContextGlobal = createContext(undefined); 
 
 /* Definimos el reductor que gestionará el estado global
 ...state : Esto crea una copia del estado actual (state) para mantener la inmutabilidad del estado
@@ -61,8 +61,8 @@ export const ContextProvider = ({ children }) => {
 
   // Función para cambiar el tema del contexto global y actualizar el localStorage
   const setTheme = (theme) => {
-    localStorage.setItem("theme", theme); // Guarda el tema en localStorage para futuras sesiones
-    dispatch({ type: "SET_THEME", payload: theme }); // Actualiza el tema en el estado global
+    localStorage.setItem("theme", theme); // Guardo el tema en localStorage para futuras sesiones
+    dispatch({ type: "SET_THEME", payload: theme }); // Esto me actualiza el tema en el estado global
   };
 
   // Acción para establecer los datos (cambiar)

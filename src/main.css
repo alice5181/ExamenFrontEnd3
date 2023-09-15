@@ -122,7 +122,7 @@ tr:nth-child(even) {
 }
 
 .destacada {
-  background-color: #FFFF00; /* Color de fondo para tarjetas destacadas (puedes cambiarlo) */
-  border: 2px solid #FFA500; /* Borde para tarjetas destacadas (puedes cambiarlo) */
-  /* Agrega cualquier otro estilo adicional que desees para tarjetas destacadas */
+  background-color: #FFFF00; /* Color de fondo para tarjetas destacadas */
+  border: 2px solid #FFA500; /* Borde para tarjetas destacadas  */
+ 
 }

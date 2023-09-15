@@ -13,30 +13,29 @@ const Form = () => {
     // Validaciones
     if (name.trim() === '' || name.trim().length < 3) {
       setErrorMessage('Por favor ingresa un nombre válido (mínimo 3 caracteres).');
-      setSuccessMessage(''); // Limpiar el mensaje de éxito
+      setSuccessMessage(''); // Limpio el mensaje de éxito
     } else if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@([a-zA-Z\-0-9]{3,8}\.)+[a-zA-Z]{2,}$/
     .test(email)) {
       setErrorMessage('Por favor ingresa un correo electrónico válido.');
-      setSuccessMessage(''); // Limpiar el mensaje de éxito
+      setSuccessMessage(''); // Limpio el mensaje de éxito
     } else {
       // Si pasa las validaciones
       setErrorMessage('');
       setSuccessMessage(`Hola ${name.trim()}, te contactaremos cuanto antes a través de tu correo electrónico.`);
-      // Aquí puedes enviar los datos del formulario o realizar otras acciones
     }
   };
 
   const handleNameChange = (event) => {
-    // Limpiar el mensaje de error al modificar el nombre
+    // Limpio el mensaje de error al modificar el nombre
     setErrorMessage('');
-    setSuccessMessage(''); // Limpiar el mensaje de éxito
+    setSuccessMessage(''); // Limpio el mensaje de éxito
     setName(event.target.value);
   };
 
   const handleEmailChange = (event) => {
-    // Limpiar el mensaje de error al modificar el correo electrónico
+    // Limpio el mensaje de error al modificar el correo electrónico
     setErrorMessage('');
-    setSuccessMessage(''); // Limpiar el mensaje de éxito
+    setSuccessMessage(''); // Limpio el mensaje de éxito
     setEmail(event.target.value);
   };
 
